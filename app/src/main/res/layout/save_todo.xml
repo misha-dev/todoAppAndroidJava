@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="350dp"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:background="@color/background_main"
+    android:elevation="8dp"
+    android:orientation="vertical"
+    android:layout_gravity="center">
+
+    <ImageButton
+        android:id="@+id/btn_close"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="-10dp"
+        android:layout_marginRight="-5dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:backgroundTint="@color/background_main"
+        android:src="@drawable/baseline_close"
+        android:contentDescription="Close" />
+
+    <EditText
+        android:id="@+id/et_todo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Enter your todo"
+        android:padding="12dp"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@id/btn_close"
+        android:inputType="textNoSuggestions" />
+
+    <LinearLayout
+        android:id="@+id/date_picker_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_todo"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tv_label_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Due date:"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:layout_marginEnd="8dp" />
+
+        <TextView
+            android:id="@+id/tv_date_picker"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="12dp"
+            android:gravity="start"
+            android:hint="Select Date"
+            android:textColor="@android:color/black"
+            android:drawableStart="@drawable/ic_calendar"
+            android:drawablePadding="8dp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/date_picker_row"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="18dp"
+        android:text="Save"
+        android:backgroundTint="@color/button_color"
+        android:textColor="@android:color/white"
+        android:padding="8dp" />
+
+</RelativeLayout>
