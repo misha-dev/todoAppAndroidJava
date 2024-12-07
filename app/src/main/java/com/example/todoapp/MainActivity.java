@@ -156,9 +156,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void handleDeleteTodo(Todo todo) {
+        String text = todo.getText();
         new AlertDialog.Builder(this)
                 .setTitle("Delete Todo")
-                .setMessage("Are you sure you want to delete this todo?")
+                .setMessage(String.format("Are you sure you want to delete this todo? (%s)", (text.length() > 150) ? text.substring(0, 150) + "..." : text))
                 .setPositiveButton("Confirm", (dialog, which) -> {
                     viewModel.deleteTodo(todo).observe(this, success -> {
                         if (success != null && success) {
