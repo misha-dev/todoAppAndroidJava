@@ -164,8 +164,6 @@ public class MainActivity extends AppCompatActivity {
                     viewModel.deleteTodo(todo).observe(this, success -> {
                         if (success != null && success) {
                             Toast.makeText(this, "Todo deleted!", Toast.LENGTH_SHORT).show();
-                        } else {
-                            showError("Failed to delete todo.");
                         }
                     });
                 })
@@ -274,8 +272,6 @@ public class MainActivity extends AppCompatActivity {
                     if (success != null && success) {
                         Toast.makeText(this, "Todo added!", Toast.LENGTH_SHORT).show();
                         dialog.dismiss();
-                    } else {
-                        Toast.makeText(this, "Error adding todo!", Toast.LENGTH_LONG).show();
                     }
                 });
             }
